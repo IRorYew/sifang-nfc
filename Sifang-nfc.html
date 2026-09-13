@@ -2,135 +2,171 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>四方艺术湖区 · 招商合作</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-  body {
-    font-family: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
-    background: #0a0a0f;
-    color: #f5f0e8;
+  html, body {
+    width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #0b0b12;
+    color: #f0ebe3;
     position: relative;
+    display: flex;
+    justify-content: center;
   }
 
-  body::before {
-    content: '';
+  /* 背景层 */
+  .bg {
     position: fixed;
     inset: 0;
+    z-index: 0;
     background:
-      radial-gradient(ellipse at 20% 30%, rgba(30, 60, 80, 0.5) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 70%, rgba(60, 30, 50, 0.4) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, rgba(20, 40, 60, 0.3) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+      radial-gradient(ellipse at 25% 20%, rgba(30, 55, 85, 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 75%, rgba(55, 25, 45, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(15, 30, 50, 0.3) 0%, transparent 65%),
+      #0b0b12;
   }
 
-  body::after {
+  .bg::after {
     content: '';
-    position: fixed;
+    position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* 光晕 */
+  .glow {
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(190, 155, 100, 0.06) 0%, transparent 70%);
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: breathe 5s ease-in-out infinite;
     pointer-events: none;
     z-index: 0;
   }
 
-  .container {
+  @keyframes breathe {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    50%      { opacity: 0.7; transform: translate(-50%, -50%) scale(1.2); }
+  }
+
+  /* 主容器 */
+  .wrap {
     position: relative;
     z-index: 1;
+    width: 100%;
     max-width: 420px;
-    margin: 0 auto;
-    padding: 50px 24px 40px;
     min-height: 100vh;
+    padding: 48px 22px 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .deco-line {
-    width: 40px;
+  /* 装饰线 */
+  .line {
+    width: 36px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(200, 170, 120, 0.6), transparent);
-    margin-bottom: 30px;
-  }
-
-  .logo-area {
-    text-align: center;
-    margin-bottom: 36px;
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  .logo-icon {
-    font-size: 44px;
-    margin-bottom: 14px;
-    display: block;
-    opacity: 0.9;
-  }
-
-  .logo-title {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #f5f0e8;
-    margin-bottom: 6px;
-  }
-
-  .logo-sub {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: rgba(200, 170, 120, 0.7);
-    text-transform: uppercase;
-  }
-
-  .info-card {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(200, 170, 120, 0.12);
-    border-radius: 12px;
-    padding: 28px 24px;
+    background: linear-gradient(90deg, transparent, rgba(190, 155, 100, 0.5), transparent);
     margin-bottom: 28px;
-    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  /* 头部 */
+  .head {
+    text-align: center;
+    margin-bottom: 32px;
     opacity: 0;
+    animation: show 0.7s ease 0.1s forwards;
   }
 
-  .info-card h2 {
-    font-size: 15px;
+  .head .icon {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .head h1 {
+    font-size: 26px;
     font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(200, 170, 120, 0.9);
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(200, 170, 120, 0.1);
+    letter-spacing: 5px;
+    margin-bottom: 5px;
   }
 
-  .info-item {
+  .head .sub {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(190, 155, 100, 0.6);
+  }
+
+  /* 卡片 */
+  .card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(190, 155, 100, 0.1);
+    border-radius: 14px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: up 0.7s ease 0.25s forwards;
+  }
+
+  .card h2 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(190, 155, 100, 0.85);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(190, 155, 100, 0.08);
+  }
+
+  .row {
     display: flex;
     align-items: baseline;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 13.5px;
-    line-height: 1.7;
-    color: rgba(245, 240, 232, 0.75);
+    line-height: 1.75;
+    color: rgba(240, 235, 227, 0.72);
   }
 
-  .info-item:last-child { margin-bottom: 0; }
+  .row:last-child { margin-bottom: 0; }
 
-  .info-icon {
+  .row .dot {
     flex-shrink: 0;
-    width: 20px;
-    margin-right: 10px;
+    width: 18px;
+    margin-right: 8px;
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
+    color: rgba(190, 155, 100, 0.5);
   }
 
-  .btn-group {
+  /* 按钮组 */
+  .btns {
     width: 100%;
-    animation: fadeUp 0.8s ease 0.4s forwards;
     opacity: 0;
+    animation: up 0.7s ease 0.4s forwards;
   }
 
   .btn {
@@ -138,163 +174,162 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 17px 0;
-    margin-bottom: 14px;
+    height: 54px;
+    margin-bottom: 12px;
     border-radius: 50px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     font-family: inherit;
     text-decoration: none;
     letter-spacing: 2px;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
-  .btn:active { transform: scale(0.97); }
+  .btn:active {
+    transform: scale(0.96);
+  }
 
-  .btn-primary {
-    background: linear-gradient(135deg, #c8956c 0%, #a06840 100%);
+  .btn-go {
+    background: linear-gradient(135deg, #c0875a 0%, #9a6035 100%);
     color: #fff;
-    box-shadow: 0 4px 20px rgba(180, 120, 60, 0.25);
+    box-shadow: 0 4px 18px rgba(170, 110, 55, 0.25);
   }
 
-  .btn-primary::after {
+  .btn-go:active {
+    box-shadow: 0 2px 10px rgba(170, 110, 55, 0.2);
+  }
+
+  .btn-go::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 40%;
-    height: 200%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-    transform: rotate(25deg);
-    animation: shimmer 3s ease-in-out infinite;
+    top: -60%;
+    left: -65%;
+    width: 45%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(28deg);
+    animation: shine 3.5s ease-in-out infinite;
   }
 
-  .btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(245, 240, 232, 0.8);
-    border: 1px solid rgba(200, 170, 120, 0.2);
+  .btn-sub {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(240, 235, 227, 0.75);
+    border: 1px solid rgba(190, 155, 100, 0.18);
+    height: 50px;
+    font-size: 14px;
   }
 
-  .btn-icon { margin-right: 8px; font-size: 16px; }
+  .btn-sub:active {
+    background: rgba(255, 255, 255, 0.08);
+  }
 
-  .footer {
+  .btn .ic {
+    margin-right: 7px;
+    font-size: 15px;
+  }
+
+  /* 底部 */
+  .foot {
     margin-top: auto;
-    padding-top: 36px;
+    padding-top: 30px;
     text-align: center;
-    animation: fadeUp 0.8s ease 0.6s forwards;
     opacity: 0;
+    animation: up 0.7s ease 0.55s forwards;
   }
 
-  .footer-text {
-    font-size: 11px;
-    color: rgba(245, 240, 232, 0.25);
-    letter-spacing: 1px;
-    line-height: 1.8;
-  }
-
-  .footer-divider {
-    width: 24px;
+  .foot .sep {
+    width: 20px;
     height: 1px;
-    background: rgba(200, 170, 120, 0.15);
-    margin: 14px auto;
+    background: rgba(190, 155, 100, 0.12);
+    margin: 0 auto 12px;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
+  .foot p {
+    font-size: 10.5px;
+    color: rgba(240, 235, 227, 0.2);
+    letter-spacing: 1px;
+    line-height: 1.9;
+  }
+
+  /* 动画 */
+  @keyframes show {
+    from { opacity: 0; transform: translateY(-8px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+  @keyframes up {
+    from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes shimmer {
-    0%   { left: -60%; }
-    50%  { left: 120%; }
-    100% { left: 120%; }
+  @keyframes shine {
+    0%   { left: -65%; }
+    45%  { left: 130%; }
+    100% { left: 130%; }
   }
 
-  .glow {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(200, 170, 120, 0.06) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: breathe 4s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  @keyframes breathe {
-    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-    50%      { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
+  /* 适配小屏 iPhone SE */
+  @media (max-height: 600px) {
+    .wrap { padding-top: 32px; padding-bottom: 24px; }
+    .head { margin-bottom: 20px; }
+    .card { padding: 18px 16px; margin-bottom: 18px; }
+    .btn { height: 48px; }
   }
 </style>
 </head>
 <body>
 
+<div class="bg"></div>
 <div class="glow"></div>
 
-<div class="container">
+<div class="wrap">
+  <div class="line"></div>
 
-  <div class="deco-line"></div>
-
-  <div class="logo-area">
-    <span class="logo-icon">◆</span>
-    <h1 class="logo-title">四方艺术湖区</h1>
-    <p class="logo-sub">Pukou Culture &amp; Tourism</p>
+  <div class="head">
+    <span class="icon">◆</span>
+    <h1>四方艺术湖区</h1>
+    <p class="sub">PUKOU CULTURE &amp; TOURISM</p>
   </div>
 
-  <div class="info-card">
+  <div class="card">
     <h2>招商合作</h2>
-    <div class="info-item">
-      <span class="info-icon">◈</span>
+    <div class="row">
+      <span class="dot">◈</span>
       <span>南京市浦口区重点文旅项目</span>
     </div>
-    <div class="info-item">
-      <span class="info-icon">◈</span>
+    <div class="row">
+      <span class="dot">◈</span>
       <span>集艺术展览、文创产业、休闲旅游于一体</span>
     </div>
-    <div class="info-item">
-      <span class="info-icon">◈</span>
+    <div class="row">
+      <span class="dot">◈</span>
       <span>现面向社会公开招商，诚邀合作</span>
     </div>
-    <div class="info-item">
-      <span class="info-icon">◈</span>
+    <div class="row">
+      <span class="dot">◈</span>
       <span>点击下方按钮查看详情与联系方式</span>
     </div>
   </div>
 
-  <div class="btn-group">
-    <a class="btn btn-primary"
-       href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
-      <span class="btn-icon">📖</span>
-      查看招商详情
+  <div class="btns">
+    <a class="btn btn-go" href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
+      <span class="ic">📖</span>查看招商详情
     </a>
-
-    <a class="btn btn-secondary"
-       href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
-      <span class="btn-icon">💬</span>
-      在微信中打开并关注
+    <a class="btn btn-sub" href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
+      <span class="ic">💬</span>在微信中打开并关注
     </a>
   </div>
 
-  <div class="footer">
-    <div class="footer-divider"></div>
-    <p class="footer-text">
-      浦口文旅集团 · 四方艺术湖区<br>
-      触碰 NFC 冰箱贴即可访问
-    </p>
+  <div class="foot">
+    <div class="sep"></div>
+    <p>浦口文旅集团 · 四方艺术湖区<br>触碰 NFC 冰箱贴即可访问</p>
   </div>
-
 </div>
 
 </body>
