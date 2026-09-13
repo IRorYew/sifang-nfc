@@ -1,379 +1,378 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>四方艺术湖区招商合作</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<title>四方艺术湖区 · 招商合作</title>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(181, 124, 62, 0.18), transparent 26%),
+        radial-gradient(circle at 82% 38%, rgba(96, 62, 126, 0.18), transparent 30%),
+        linear-gradient(180deg, #0e1420 0%, #090b12 48%, #120914 100%);
+      color: #f7f2e8;
+    }
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-  }
+    body {
+      overflow-x: hidden;
+    }
 
-  html, body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+    .page {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 36px;
+    }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-    background: #0b0b12;
-    color: #f0ebe3;
-  }
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 56vh;
+      background-image: url("contact-bg.jpg.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
 
-  .page {
-    width: 100%;
-    min-height: 100vh;
-    background:
-      radial-gradient(ellipse at 25% 20%, rgba(30, 55, 85, 0.45) 0%, transparent 55%),
-      radial-gradient(ellipse at 75% 75%, rgba(55, 25, 45, 0.35) 0%, transparent 50%),
-      #0b0b12;
-  }
-
-  /* 顶部开屏背景图区域 */
-  .hero {
-    position: relative;
-    width: 100%;
-    min-height: 62vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    overflow: hidden;
-    background-image:
-      linear-gradient(
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 42%;
+      background: linear-gradient(
         to bottom,
-        rgba(11, 11, 18, 0.02) 0%,
-        rgba(11, 11, 18, 0.18) 45%,
-        rgba(11, 11, 18, 0.92) 100%
-      ),
-      url("contact-bg.jpg.jpg");
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 50% 30%, rgba(255,255,255,0.04), transparent 45%),
-      linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 420px;
-    padding: 0 22px 34px;
-    text-align: center;
-    animation: fadeUp 0.8s ease forwards;
-  }
-
-  .tag {
-    display: inline-block;
-    padding: 7px 14px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 999px;
-    background: rgba(0,0,0,0.28);
-    color: rgba(255,255,255,0.9);
-    font-size: 12px;
-    letter-spacing: 2px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .hero h1 {
-    font-size: 29px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: #fff;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.45);
-  }
-
-  .hero p {
-    font-size: 13px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.82);
-    letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.45);
-  }
-
-  .content {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 22px 22px 36px;
-  }
-
-  .card {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.045);
-    border: 1px solid rgba(190, 155, 100, 0.12);
-    border-radius: 16px;
-    padding: 22px 20px;
-    margin-bottom: 22px;
-    box-shadow: 0 16px 45px rgba(0,0,0,0.22);
-    animation: fadeUp 0.8s ease 0.1s both;
-  }
-
-  .card h2 {
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(212, 172, 112, 0.95);
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(190, 155, 100, 0.1);
-  }
-
-  .row {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 10px;
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: rgba(240, 235, 227, 0.76);
-  }
-
-  .row:last-child {
-    margin-bottom: 0;
-  }
-
-  .dot {
-    flex-shrink: 0;
-    width: 18px;
-    margin-right: 8px;
-    text-align: center;
-    font-size: 12px;
-    color: rgba(212, 172, 112, 0.7);
-  }
-
-  .btns {
-    width: 100%;
-    animation: fadeUp 0.8s ease 0.2s both;
-  }
-
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 54px;
-    margin-bottom: 12px;
-    border-radius: 999px;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: inherit;
-    text-decoration: none;
-    letter-spacing: 2px;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-
-  .btn:active {
-    transform: scale(0.96);
-  }
-
-  .btn-go {
-    background: linear-gradient(135deg, #c0875a 0%, #9a6035 100%);
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(170, 110, 55, 0.25);
-  }
-
-  .btn-go::after {
-    content: '';
-    position: absolute;
-    top: -60%;
-    left: -65%;
-    width: 45%;
-    height: 220%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
-    transform: rotate(28deg);
-    animation: shine 3.5s ease-in-out infinite;
-  }
-
-  .btn-sub {
-    background: rgba(255, 255, 255, 0.055);
-    color: rgba(240, 235, 227, 0.82);
-    border: 1px solid rgba(190, 155, 100, 0.18);
-    height: 50px;
-    font-size: 14px;
-  }
-
-  .btn .ic {
-    margin-right: 7px;
-    font-size: 16px;
-  }
-
-  .contact {
-    margin-top: 18px;
-    padding: 18px 18px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.06);
-    color: rgba(240,235,227,0.68);
-    font-size: 13px;
-    line-height: 1.9;
-    animation: fadeUp 0.8s ease 0.3s both;
-  }
-
-  .contact p {
-    margin-bottom: 4px;
-  }
-
-  .contact p:last-child {
-    margin-bottom: 0;
-  }
-
-  .contact strong {
-    color: rgba(212, 172, 112, 0.95);
-    font-weight: 700;
-  }
-
-  .foot {
-    margin-top: 28px;
-    text-align: center;
-    color: rgba(240, 235, 227, 0.28);
-    font-size: 10.5px;
-    letter-spacing: 1px;
-    line-height: 1.9;
-    animation: fadeUp 0.8s ease 0.4s both;
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
+        rgba(8, 10, 15, 0) 0%,
+        rgba(8, 10, 15, 0.42) 38%,
+        rgba(8, 10, 15, 0.92) 76%,
+        #090b12 100%
+      );
+      pointer-events: none;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    .top-badge {
+      position: absolute;
+      left: 50%;
+      bottom: 66px;
+      transform: translateX(-50%);
+      z-index: 2;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(11, 12, 18, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 13px;
+      letter-spacing: 4px;
+      white-space: nowrap;
+      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.35);
     }
-  }
 
-  @keyframes shine {
-    0%   { left: -65%; }
-    45%  { left: 130%; }
-    100% { left: 130%; }
-  }
+    .content {
+      position: relative;
+      z-index: 3;
+      margin-top: -34px;
+      padding: 0 22px;
+    }
 
-  /* 小屏手机适配 */
-  @media (max-width: 380px) {
-    .hero h1 {
-      font-size: 25px;
+    .intro-card {
+      border-radius: 28px;
+      padding: 24px 22px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035)),
+        rgba(16, 17, 26, 0.82);
+      border: 1px solid rgba(215, 180, 126, 0.28);
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.38),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #d6ad72;
+      background: rgba(214, 173, 114, 0.1);
+      border: 1px solid rgba(214, 173, 114, 0.24);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 30px;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 15px;
+      line-height: 1.8;
+      letter-spacing: 0.5px;
+    }
+
+    .highlight {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(194, 132, 72, 0.24), rgba(194, 132, 72, 0.08));
+      border: 1px solid rgba(214, 173, 114, 0.25);
+      color: rgba(255, 244, 226, 0.94);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .section-card {
+      margin-top: 18px;
+      border-radius: 26px;
+      padding: 22px 20px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: #d7b27a;
+      font-size: 20px;
+      font-weight: 700;
       letter-spacing: 3px;
     }
 
-    .hero p {
+    .section-title::before {
+      content: "";
+      width: 8px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #e1bd82, #a76b35);
+      box-shadow: 0 0 18px rgba(215, 178, 122, 0.45);
+    }
+
+    .points {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .points li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .diamond {
+      flex: 0 0 auto;
+      width: 9px;
+      height: 9px;
+      margin-top: 8px;
+      transform: rotate(45deg);
+      background: linear-gradient(135deg, #e0bd83, #7d542c);
+      box-shadow: 0 0 0 3px rgba(224, 189, 131, 0.12);
+    }
+
+    .cta-area {
+      margin-top: 22px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      width: 100%;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .primary-btn {
+      color: #fffaf3;
+      background: linear-gradient(135deg, #c98b51 0%, #a96936 52%, #8d542d 100%);
+      box-shadow:
+        0 16px 34px rgba(180, 103, 47, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      animation: pulseGlow 2.8s ease-in-out infinite;
+    }
+
+    .secondary-btn {
+      color: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-icon {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+
+    .mini-note {
+      margin: 16px 2px 0;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.48);
       font-size: 12px;
+      line-height: 1.7;
     }
 
-    .content {
-      padding-left: 18px;
-      padding-right: 18px;
+    .footer-space {
+      height: 10px;
     }
 
-    .card {
-      padding: 18px 16px;
+    @keyframes pulseGlow {
+      0% {
+        box-shadow:
+          0 16px 34px rgba(180, 103, 47, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transform: translateY(0);
+      }
+      50% {
+        box-shadow:
+          0 20px 46px rgba(218, 139, 72, 0.46),
+          0 0 0 7px rgba(218, 139, 72, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        transform: translateY(-1px);
+      }
+      100% {
+        box-shadow:
+          0 16px 34px rgba(180, 103, 47, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transform: translateY(0);
+      }
     }
-  }
 
-  @media (max-height: 680px) {
-    .hero {
-      min-height: 55vh;
+    @media (max-width: 390px) {
+      .hero {
+        min-height: 54vh;
+      }
+
+      .content {
+        padding: 0 18px;
+      }
+
+      .title {
+        font-size: 27px;
+      }
+
+      .subtitle,
+      .points li,
+      .highlight {
+        font-size: 14px;
+      }
+
+      .top-badge {
+        font-size: 12px;
+        letter-spacing: 3px;
+        bottom: 58px;
+      }
     }
 
-    .content {
-      padding-top: 16px;
+    @media (min-height: 780px) {
+      .hero {
+        min-height: 58vh;
+      }
     }
-
-    .btn {
-      height: 50px;
-    }
-  }
-</style>
+  </style>
 </head>
 
 <body>
-
-<div class="page">
-
-  <section class="hero">
-    <div class="hero-content">
-      <div class="tag">CONTACT US · 感谢关注</div>
-      <h1>四方艺术湖区</h1>
-      <p>触碰 NFC 冰箱贴，了解园区招商合作、文旅资源与联系方式</p>
-    </div>
-  </section>
-
-  <main class="content">
-
-    <section class="card">
-      <h2>招商合作</h2>
-
-      <div class="row">
-        <span class="dot">◈</span>
-        <span>南京市浦口区重点文旅项目</span>
-      </div>
-
-      <div class="row">
-        <span class="dot">◈</span>
-        <span>集艺术展览、文创产业、休闲旅游于一体</span>
-      </div>
-
-      <div class="row">
-        <span class="dot">◈</span>
-        <span>现面向社会公开招商，诚邀品牌与主理人合作</span>
-      </div>
-
-      <div class="row">
-        <span class="dot">◈</span>
-        <span>点击下方按钮查看公众号详情与联系方式</span>
-      </div>
+  <main class="page">
+    <section class="hero" aria-label="四方艺术湖区背景图">
+      <div class="top-badge">招商合作 · 文旅资源 · 联系方式</div>
     </section>
 
-    <section class="btns">
-      <a class="btn btn-go" href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
-        <span class="ic">📖</span>查看招商详情
-      </a>
+    <section class="content">
+      <div class="intro-card">
+        <div class="eyebrow">PUKOU CULTURE & TOURISM</div>
+        <h1 class="title">四方艺术湖区</h1>
+        <p class="subtitle">
+          南京市浦口区重点文旅项目，融合艺术展览、文创产业、休闲旅游与品牌合作资源。
+        </p>
 
-      <a class="btn btn-sub" href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA">
-        <span class="ic">💬</span>在微信中打开并关注
-      </a>
+        <div class="highlight">
+          现面向品牌、主理人、文创机构及商业合作方开放招商合作，共同打造高品质文旅消费场景。
+        </div>
+
+        <div class="cta-area">
+          <a class="primary-btn" href="https://mp.weixin.qq.com/s/YOUR_ARTICLE_LINK" target="_blank" rel="noopener">
+            <span class="btn-icon">📖</span>
+            立即了解招商合作
+          </a>
+
+          <a class="secondary-btn" href="weixin://">
+            <span class="btn-icon">💬</span>
+            打开微信关注公众号
+          </a>
+        </div>
+
+        <p class="mini-note">
+          如微信无法直接打开，请复制链接至微信内访问公众号招商详情。
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h2 class="section-title">招商方向</h2>
+        <ul class="points">
+          <li>
+            <span class="diamond"></span>
+            <span>艺术展览、公共艺术、策展活动及艺术生活方式品牌合作。</span>
+          </li>
+          <li>
+            <span class="diamond"></span>
+            <span>文创零售、咖啡轻餐、设计买手店、亲子体验等业态入驻。</span>
+          </li>
+          <li>
+            <span class="diamond"></span>
+            <span>企业活动、品牌发布、城市度假、研学团建等场景合作。</span>
+          </li>
+          <li>
+            <span class="diamond"></span>
+            <span>点击上方按钮查看公众号详情，获取联系方式与合作说明。</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-space"></div>
     </section>
-
-    <section class="contact">
-      <p><strong>酒店预定：</strong>025-58609999</p>
-      <p><strong>咨询电话：</strong>15155403736</p>
-      <p><strong>园区招商：</strong>18168412732</p>
-    </section>
-
-    <footer class="foot">
-      浦口文旅集团 · 四方艺术湖区<br>
-      手机触碰 NFC 冰箱贴即可访问
-    </footer>
-
   </main>
-
-</div>
-
 </body>
 </html>
