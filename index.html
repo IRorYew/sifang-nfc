@@ -58,25 +58,25 @@
       -webkit-mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.12) 7%,
-        rgba(0, 0, 0, 0.38) 14%,
-        rgba(0, 0, 0, 0.72) 23%,
-        rgba(0, 0, 0, 1) 36%,
-        rgba(0, 0, 0, 1) 68%,
-        rgba(0, 0, 0, 0.74) 80%,
-        rgba(0, 0, 0, 0.28) 92%,
+        rgba(0, 0, 0, 0.08) 5%,
+        rgba(0, 0, 0, 0.32) 12%,
+        rgba(0, 0, 0, 0.68) 20%,
+        rgba(0, 0, 0, 1) 32%,
+        rgba(0, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 0.74) 82%,
+        rgba(0, 0, 0, 0.28) 94%,
         rgba(0, 0, 0, 0) 100%
       );
       mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.12) 7%,
-        rgba(0, 0, 0, 0.38) 14%,
-        rgba(0, 0, 0, 0.72) 23%,
-        rgba(0, 0, 0, 1) 36%,
-        rgba(0, 0, 0, 1) 68%,
-        rgba(0, 0, 0, 0.74) 80%,
-        rgba(0, 0, 0, 0.28) 92%,
+        rgba(0, 0, 0, 0.08) 5%,
+        rgba(0, 0, 0, 0.32) 12%,
+        rgba(0, 0, 0, 0.68) 20%,
+        rgba(0, 0, 0, 1) 32%,
+        rgba(0, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 0.74) 82%,
+        rgba(0, 0, 0, 0.28) 94%,
         rgba(0, 0, 0, 0) 100%
       );
     }
@@ -366,7 +366,7 @@
 <body>
   <main class="page">
     <section class="hero" aria-label="四方艺术湖区背景图">
-      <img class="hero-img" src="contact-bg.jpg" alt="四方艺术湖区" />
+      <img class="hero-img" src="contact-bg.jpg.jpg" alt="四方艺术湖区" />
       <div class="top-badge">招商合作 · 文旅资源 · 联系方式</div>
     </section>
 
@@ -385,7 +385,11 @@
         </div>
 
         <div class="cta-area">
-          <a class="primary-btn" href="https://mp.weixin.qq.com/s/YOUR_ARTICLE_LINK" target="_blank" rel="noopener">
+          <a
+            class="primary-btn"
+            href="#"
+            onclick="openArticle(event)"
+          >
             <span class="btn-icon">📖</span>
             立即了解招商合作
           </a>
@@ -397,7 +401,7 @@
         </div>
 
         <p class="mini-note">
-          如微信无法直接打开，请复制链接至微信内访问公众号招商详情。
+          如跳转失败，请复制公众号文章链接到微信内打开。
         </p>
       </div>
 
@@ -430,5 +434,27 @@
       <div class="footer-space"></div>
     </section>
   </main>
+
+  <script>
+    const articleUrl = "这里替换成你的公众号文章真实链接";
+
+    function openArticle(event) {
+      event.preventDefault();
+
+      if (
+        !articleUrl ||
+        articleUrl === "https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA" ||
+        !articleUrl.startsWith("https://mp.weixin.qq.com/")
+      ) {
+        document.body.insertAdjacentHTML(
+          "beforeend",
+          '<div id="tipBox" style="position:fixed;left:24px;right:24px;top:45%;z-index:9999;padding:18px 16px;border-radius:18px;background:rgba(12,13,18,.94);border:1px solid rgba(255,255,255,.18);box-shadow:0 20px 60px rgba(0,0,0,.45);color:#fff;text-align:center;font-size:15px;line-height:1.7;">请先在代码底部把公众号文章真实链接填入 articleUrl<br><button onclick="document.getElementById(\'tipBox\').remove()" style="margin-top:12px;border:0;border-radius:999px;padding:9px 22px;background:#b7773d;color:#fff;font-size:14px;">知道了</button></div>'
+        );
+        return;
+      }
+
+      window.location.href = articleUrl;
+    }
+  </script>
 </body>
 </html>
