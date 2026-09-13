@@ -387,14 +387,18 @@
         <div class="cta-area">
           <a
             class="primary-btn"
-            href="#"
-            onclick="openArticle(event)"
+            href="https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA"
+            target="_self"
+            rel="noopener"
           >
             <span class="btn-icon">📖</span>
             立即了解招商合作
           </a>
 
-          <a class="secondary-btn" href="weixin://">
+          <a
+            class="secondary-btn"
+            href="weixin://"
+          >
             <span class="btn-icon">💬</span>
             打开微信关注公众号
           </a>
@@ -434,27 +438,5 @@
       <div class="footer-space"></div>
     </section>
   </main>
-
-  <script>
-    const articleUrl = "https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA";
-
-    function openArticle(event) {
-      event.preventDefault();
-
-      if (
-        !articleUrl ||
-        articleUrl === "https://mp.weixin.qq.com/s/LehaqilCWJ3KS4c1JLIYYA" ||
-        !articleUrl.startsWith("https://mp.weixin.qq.com/")
-      ) {
-        document.body.insertAdjacentHTML(
-          "beforeend",
-          '<div id="tipBox" style="position:fixed;left:24px;right:24px;top:45%;z-index:9999;padding:18px 16px;border-radius:18px;background:rgba(12,13,18,.94);border:1px solid rgba(255,255,255,.18);box-shadow:0 20px 60px rgba(0,0,0,.45);color:#fff;text-align:center;font-size:15px;line-height:1.7;">请先在代码底部把公众号文章真实链接填入 articleUrl<br><button onclick="document.getElementById(\'tipBox\').remove()" style="margin-top:12px;border:0;border-radius:999px;padding:9px 22px;background:#b7773d;color:#fff;font-size:14px;">知道了</button></div>'
-        );
-        return;
-      }
-
-      window.location.href = articleUrl;
-    }
-  </script>
 </body>
 </html>
